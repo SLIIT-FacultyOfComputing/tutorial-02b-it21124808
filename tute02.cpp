@@ -12,33 +12,46 @@ Type = 3
 OtRate = 1700
 Please Note that the input command in C++ is std::cin. This is a representation of the Keyboard.*/
 
-#include <stdio.h>
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+//function main begins with program execution
 int main()
 {
-   double salary, netSalary;
-   int etype, otHrs, otRate;
-   printf("Enter Employee Type : ");
-   scanf("%d", &etype);
-   printf("Enter Salary  : ");
-   scanf("%f", &salary);
-   printf("Enter OtHrs : ");
-   scanf("%d", &otHrs); 
-   
-   switch (etype) {
-      case 1 :
-          otRate = 1000;
-          break;
-      case 2 :
-          otRate = 1500;
-          break;
-      default :
-          otRate = 1700;
-          break;
-   }
 
+       double salary; //declaring variable
+       double netSalary; //declaring variable
+       int etype; //declaring variable
+       int otHrs; //declaring variable
+       int otRate; //declaring variable
 
-   netSalary = salary + otHrs* otRate;
-   printf("Net Salary is %f ", netSalary);
-  
-   return 0;
-}
+         cout << "Enter Emplyee Type : "; //prompt
+         cin >> etype; //read
+
+         cout << "Enter Salary : "; //prompt
+         cin >> salary; //read
+
+         cout << "Enter OT Hours : "; //prompt
+         cin >> otHrs; //read
+
+             switch(etype) //checking condition
+             {
+
+                   case 1: otRate = 1000;
+                       break;
+
+                   case 2: otRate = 1500;
+                       break;
+
+                   case 3: otRate = 1700;
+                       break;
+
+             } //end of the switch
+
+               netSalary = salary + otHrs * otRate; //calculation
+               cout << setw(10) << setiosflags(ios::fixed) << setprecision (2) << "Net Salary is " << netSalary << endl; //display
+
+                  return 0;
+
+} //end of the main function 

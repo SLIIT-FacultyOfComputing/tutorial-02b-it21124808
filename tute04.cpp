@@ -13,17 +13,45 @@ Do not modify the main function.*/
 
 #include <iostream>
 
-long Factorial(int no);
-long nCr(int n, int r);
+long factorial(int no);//function declaration
+long nCr(int n, int r);//function declaration
 
-int main() {
-  int n, r;
-  std::cout << "Enter a value for n ";
-  std::cin >> n;
-  std::cout << "Enter a value for r ";
-  std::cin >> r;
-  std::cout << "nCr = ";
-  std::cout << nCr(n,r);
-  std::cout << std::endl;
-  return 0;
-}
+//function main begins with program execution
+int main() 
+{
+  int n, r; //declaring variables
+
+  std::cout << "Enter a value for n "; //prompt
+  std::cin >> n; //read
+
+  std::cout << "Enter a value for r "; //prompt
+  std::cin >> r; //read
+
+  std::cout << "nCr = "; //display
+  std::cout << nCr(n,r); //function calling
+  std::cout << std::endl; //new line character
+
+      return 0;
+
+} //end of the main Function
+long factorial(int no) //function implementation
+{
+      int fac = 1, i; //declaring variable
+
+        for(i=no; i>=1; i--)
+        {
+          
+              fac *= i; 
+
+        } //end of the for loop
+
+        return fac;
+} //end of the function
+long nCr(int n, int r) //function implementation
+{
+
+      return factorial(n) / (factorial(r) * factorial (n - r));
+
+} //end of the function
+
+
